@@ -12,20 +12,13 @@ class Cvalue:
 def plus(a,b):
     c = a + b
     return c
-# 객체 생성
-p1=Cvalue()
-p1.add(1)
-p1.add(2)
-p1.add(3)
-p1.fprint()
+
+if __name__ == '__main__':
+    p1=Cvalue()
+    p1.add(1)
+    p1.add(2)
+    p1.add(3)
+    p1.fprint()
+
 
 print(__name__)
-
-# 내장 변수
-# if __name__ == '__main__':
-#     p1=Cvalue()
-#     p1.add(1)
-#     p1.add(2)
-#     p1.add(3)
-#     p1.fprint()
-   
