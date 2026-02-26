@@ -57,9 +57,28 @@
 #                 result.append("False")
 #         return result
 
-def total_sum(num):
-    count =0
-    for i in range(1,num+1):
-        count += i
-    return count
+# def total_sum(num):
+#     count =0
+#     for i in range(1,num+1):
+#         count += i
+#     return count
+
+
+class Phone:
+    def __init__(self,brand,year,color):
+        self.brand = brand
+        self.year = year
+        self.color = color
+    def info(self):
+        print("제조사 :",self.brand)
+        print("출고년도 :",self.year)
+        print("색상 :",self.color)
+    def setinfo(self,brand,year,color):
+        self.brand = brand
+        self.year = year
+        self.color = color
+        
+my_phone = Phone('samsung',2026,'white')
+my_phone.setinfo('iphone',2025,'black')
+my_phone.info()
 
