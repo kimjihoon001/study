@@ -5,8 +5,11 @@ from tkinter import Button
 from tkinter import PhotoImage
 
 
+# from PIL import Image
 
-
+# image=Image.open(r"경로.jpg")
+# img_resized=image.resize((300,200))
+# image.save(r"경로.png")
 
 oroot=Tk()
 oroot.geometry("800x600")

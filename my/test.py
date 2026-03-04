@@ -64,21 +64,49 @@
 #     return count
 
 
-class Phone:
-    def __init__(self,brand,year,color):
-        self.brand = brand
-        self.year = year
-        self.color = color
-    def info(self):
-        print("제조사 :",self.brand)
-        print("출고년도 :",self.year)
-        print("색상 :",self.color)
-    def setinfo(self,brand,year,color):
-        self.brand = brand
-        self.year = year
-        self.color = color
+# class Phone:
+#     def __init__(self,brand,year,color):
+#         self.brand = brand
+#         self.year = year
+#         self.color = color
+#     def info(self):
+#         print("제조사 :",self.brand)
+#         print("출고년도 :",self.year)
+#         print("색상 :",self.color)
+#     def setinfo(self,brand,year,color):
+#         self.brand = brand
+#         self.year = year
+#         self.color = color
         
-my_phone = Phone('samsung',2026,'white')
-my_phone.setinfo('iphone',2025,'black')
-my_phone.info()
+# my_phone = Phone('samsung',2026,'white')
+# my_phone.setinfo('iphone',2025,'black')
+# my_phone.info()
 
+
+path="./pizza_file1.txt"
+mode="w"
+encoding="utf-8"
+
+with open(path,mode,encoding=encoding) as f:
+    f.write("페퍼로니피자 3000\n")
+    f.write("치즈피자 3200\n")
+    f.write("콤비네이션피자 3500\n")
+    
+path="./pizza_file1.txt"
+mode="a"
+encoding="utf-8"
+
+with open(path,mode,encoding=encoding) as f:
+    f.write("불고기피자 3600\n")
+    f.write("해산물피자 3800\n")
+    
+path="./pizza_file1.txt"
+mode="r"
+encoding="utf-8"
+
+with open(path,mode,encoding=encoding) as f:
+    pizza_readlines=f.readlines()
+    pizza=[]
+    for meun in pizza_readlines:
+        pizza.append(meun.split()[0])
+print(pizza)

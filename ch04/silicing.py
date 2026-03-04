@@ -4,7 +4,7 @@ week=["월","화","수","목","금","토","일"]
 
 # print(week[-2:])
 # print(week[:4])
-# print(week[-5:5])
+print(week[-5:5])
 # print(week[-1:4])
 
 # print(week[0:7])
@@ -48,6 +48,6 @@ week=["월","화","수","목","금","토","일"]
 # a=tuple(b)
 # print(a)
 
-a=([1,2,3],4,5)
-a[0][1]=20
-print(a)
+# a=([1,2,3],4,5)
+# a[0][1]=20
+# print(a)
