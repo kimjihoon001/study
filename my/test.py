@@ -83,30 +83,64 @@
 # my_phone.info()
 
 
-path="./pizza_file1.txt"
-mode="w"
-encoding="utf-8"
+# path="./pizza_file1.txt"
+# mode="w"
+# encoding="utf-8"
 
-with open(path,mode,encoding=encoding) as f:
-    f.write("페퍼로니피자 3000\n")
-    f.write("치즈피자 3200\n")
-    f.write("콤비네이션피자 3500\n")
+# with open(path,mode,encoding=encoding) as f:
+#     f.write("페퍼로니피자 3000\n")
+#     f.write("치즈피자 3200\n")
+#     f.write("콤비네이션피자 3500\n")
     
-path="./pizza_file1.txt"
-mode="a"
-encoding="utf-8"
+# path="./pizza_file1.txt"
+# mode="a"
+# encoding="utf-8"
 
-with open(path,mode,encoding=encoding) as f:
-    f.write("불고기피자 3600\n")
-    f.write("해산물피자 3800\n")
+# with open(path,mode,encoding=encoding) as f:
+#     f.write("불고기피자 3600\n")
+#     f.write("해산물피자 3800\n")
     
-path="./pizza_file1.txt"
-mode="r"
-encoding="utf-8"
+# path="./pizza_file1.txt"
+# mode="r"
+# encoding="utf-8"
 
-with open(path,mode,encoding=encoding) as f:
-    pizza_readlines=f.readlines()
-    pizza=[]
-    for meun in pizza_readlines:
-        pizza.append(meun.split()[0])
-print(pizza)
+# with open(path,mode,encoding=encoding) as f:
+#     pizza_readlines=f.readlines()
+#     pizza=[]
+#     for meun in pizza_readlines:
+#         pizza.append(meun.split()[0])
+# print(pizza)
+
+
+# try:
+#     x = 10 / 0
+# except ZeroDivisionError:
+#     print("Cannot divide by zero!")
+
+# try:
+#     raise KeyError()
+# except KeyError:
+#     print("Key is missing!")
+
+
+# add = lambda x,y : x+y
+# print(add(3,5))
+
+# per = ['10.31', "", "8.00"]
+# for i in per:
+#     try:
+#         print(float(i))
+#     except ValueError:
+#         print(0)
+
+
+numbers = [10, 20,30]
+
+try:
+    indexa=int(input("인덱스를 입력 하세요:"))
+    print(numbers[indexa])
+except IndexError:
+    print("잘못된인덱스입니다.")
+except ValueError:
+    print("잘못된 타입입니다.")    
+    
