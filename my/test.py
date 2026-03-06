@@ -134,13 +134,50 @@
 #         print(0)
 
 
-numbers = [10, 20,30]
+# numbers = [10, 20,30]
 
-try:
-    indexa=int(input("인덱스를 입력 하세요:"))
-    print(numbers[indexa])
-except IndexError:
-    print("잘못된인덱스입니다.")
-except ValueError:
-    print("잘못된 타입입니다.")    
-    
+# try:
+#     indexa=int(input("인덱스를 입력 하세요:"))
+#     print(numbers[indexa])
+# except IndexError:
+#     print("잘못된인덱스입니다.")
+# except ValueError:
+#     print("잘못된 타입입니다.")    
+
+# import re
+# pattern = r'\w+'
+# text = "Hello, World!"
+# print(re.findall(pattern, text))
+
+# import re
+# pattern = r'(ab)+'
+# text = "ababab"
+# match = re.match(pattern, text)
+# print(match.group())
+
+
+# import re
+
+# text="이메일목록: test@example.com, hello@world.net, user123@domain.org"
+# print(re.findall(r'\w+@\w+.\w+',text))
+
+# import re
+
+# text = "연락처: 010-1234-5678, 02-987-6543, 031-456-7890"
+# print(re.findall(r'\d+-\d+-\d+',text))
+
+# import re
+
+# text = "I love Python. Java is also popular. Python is great for AI"
+# print(re.findall(r'[^.]*Python[^.]*', text))
+
+
+# import re
+
+# text = "상품코드: A123, B456, C789, 가격: 12000원"
+# print(re.findall(r"[0-9]+",text))
+
+import re
+
+text = "NASA is working on AI projects with IBM and Google."
+print(re.findall(r"[A-Z]{2,}+",text))

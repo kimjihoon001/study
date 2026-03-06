@@ -52,11 +52,15 @@ p = re.compile(r'&[#](0[0-7]+|[0-9]+|x[0-9a-fA-F]+);')
 p = re.compile(r"""
 &[#]
 (
-    0[0-7]+         #Octal
-    |[0-9]+
-    |x[0-9a-fA-F]+
+    0[0-7]+         #Octal form(8진수 형식)
+    |[0-9]+         #Decimal form(10진수 형식)
+    |x[0-9a-fA-F]+  #Hexadecimal form(16진수 형식)
 )
-;
-"""    
+;                   #후행 semicolon
+""",re.VERBOSE    
 )
+data="&#07; &#8; &#x0A;"
+
+
+print(p.findall(data))
 
