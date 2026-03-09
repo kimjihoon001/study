@@ -177,7 +177,110 @@
 # text = "상품코드: A123, B456, C789, 가격: 12000원"
 # print(re.findall(r"[0-9]+",text))
 
+# import re
+
+# text = "NASA is working on AI projects with IBM and Google."
+# print(re.findall(r"[A-Z]{2,}+",text))
+
+# numbers = [1, 2, 3, 4, 5]
+# iter_numbers = iter(numbers)
+
+# for number in iter_numbers:
+#     print(number)
+
+
+# fruits = ["apple", "banana", "cherry"]
+
+# it = iter(fruits)
+
+# while True:
+#     try:
+#         item = next(it)
+#         print(item)
+#     except StopIteration:
+#         break
+
+# numbers = iter(range(0,10))
+# for num in numbers:
+#     if num%2==0 and num !=0:
+#         print(num)
+
+# class MyRange:
+    
+#     def __init__(self,start,stop,step):
+#         self.start=start
+#         self.stop=stop
+#         self.step=step
+#     def __iter__(self):
+#         return self
+    
+#     def __next__(self):
+#         if self.start >= self.stop:
+#             raise StopIteration
+#         result = self.start
+#         self.start += self.step
+#         return result 
+
+# for i in MyRange(2,10,2):
+#     print(i)
+
+# with open("data.txt",'w',encoding='utf-8') as file:
+#     for i in range(1,11):
+#         file.write(f"{i}번째 줄입니다.\n")
+        
+# print('파일이 성공적으로 작성되었습니다.')
+
+# with open("data.txt",'a',encoding='utf-8') as file:
+#     file.write("11번째 줄입니다.\n")
+
+# with open("data.txt","r",encoding='utf-8') as file:
+#     contents = file.read()
+    
+# print('파일내용:')
+# print(contents)
+
+# while True:
+#     try:
+#         number=int(input("숫자를 입력하세요:"))
+#         print(number**2)
+#         break
+#     except ValueError:
+#         print("올바른 숫자를 입력하세요!")
+
+# print(list(map(lambda x: x**2,[10,20,30,40,50])))
+
 import re
 
-text = "NASA is working on AI projects with IBM and Google."
-print(re.findall(r"[A-Z]{2,}+",text))
+data = """python one
+life is too short
+python two
+you need python
+python three"""
+
+for result in re.findall(r'^python \w+',data,re.MULTILINE):
+    print(result)
+
+# import re
+
+# email= input("이메일을 입력하세요: ")
+
+# p = re.compile(r"\w+@\w+\.\w+")
+
+# m = re.match(p,email)
+
+# if m:
+#     print("올바른 이메일 형식입니다.")
+# else:
+#     print("잘못된 이메일 형식입니다.")
+
+
+# def generatorfunc(stop):
+#     start=1
+#     while start <= stop:
+#         yield start**2
+#         start += 1
+
+# n=5
+# gfunc = generatorfunc(n)
+# for _ in range(n):
+#     print(next(gfunc))

@@ -34,7 +34,8 @@ def read_file(file_path):
     with open(file_path,'r',encoding='utf-8') as file:
         for line in file.readlines():
             yield line.strip()
-        
 
-for _ in range(6):
-    print(next(read_file(path)))
+liens= read_file(path)
+print(next(liens))
+
+# 파일 자체도 이터레이터임

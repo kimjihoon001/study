@@ -9,3 +9,4 @@ def longtime_job():
 
 list_job = [longtime_job() for i in range(5)]
 print(list_job[0])
+StopIteration
