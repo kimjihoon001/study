@@ -249,16 +249,16 @@
 
 # print(list(map(lambda x: x**2,[10,20,30,40,50])))
 
-import re
+# import re
 
-data = """python one
-life is too short
-python two
-you need python
-python three"""
+# data = """python one
+# life is too short
+# python two
+# you need python
+# python three"""
 
-for result in re.findall(r'^python \w+',data,re.MULTILINE):
-    print(result)
+# for result in re.findall(r'^python \w+',data,re.MULTILINE):
+#     print(result)
 
 # import re
 
@@ -284,3 +284,104 @@ for result in re.findall(r'^python \w+',data,re.MULTILINE):
 # gfunc = generatorfunc(n)
 # for _ in range(n):
 #     print(next(gfunc))
+
+# class Stack:
+#     def __init__(self):
+#         self.stack = []
+    
+#     def push(self,x):
+#         self.stack.append(x)
+#     def is_empty(self):
+#         if len(self.stack) == 0:
+#             return True
+#         return False
+#     def pop(self):
+#         if not self.is_empty():
+#             return self.stack.pop()
+#         else:
+#             return -1
+#     def top(self):
+#         if not self.is_empty():
+#             return self.stack[-1]
+#         else:
+#             return -1
+
+
+# def postfix_calc(expr):
+#     stack = []
+#     ops ={
+#         '+': lambda a,b : a+b,
+#         '-': lambda a,b : a-b,
+#         '/': lambda a,b : a/b,
+#         '*': lambda a,b : a*b
+#     }
+    
+#     for token in expr.split():
+        
+#         if token in ops:
+#             b = stack.pop()
+#             a = stack.pop()
+#             stack.append(ops[token](a,b))
+#         else:
+#             stack.append(int(token))
+    
+#     return stack.pop()
+
+# print(postfix_calc("5 3 4 + -"))
+
+class Queue:
+    def __init__(self):
+        self.queue = []
+
+    def enqueue(self,name):
+        self.queue.append(name)
+        
+    def is_empty(self):
+        if len(self.queue) == 0:
+            return True
+        return False
+    
+    def dequeue(self):
+        if not self.is_empty():
+            return self.queue.pop(0)
+        return -1
+    
+    def front(self):
+        if not self.is_empty():
+            return self.queue[0]
+        return -1
+    
+    def status(self):
+        return self.queue
+    
+        
+bank = Queue()
+
+bank.enqueue("김철수")
+bank.enqueue("이영희")
+bank.enqueue("박민수")
+print(f"현재대기열: {bank.status()}")
+print(f"업무처리중인고객: {bank.dequeue()}")
+print(f"남은대기고객: {bank.status()}")
+
+
+
+# class Deque:
+#     def __init__(self):
+#         self.deque = []
+#     def push_front(self,x):
+#         self.deque.insert(0,x)
+#     def push_back(self,x):
+#         self.deque.append(x)
+#     def pop_front(self):
+#         if not self.is_empty():
+#             return self.deque.pop(0)
+#         return -1
+#     def pop_back(self):
+#         if not self.is_empty():
+#             return self.deque.pop()
+#         return -1
+#     def is_empty(self):
+#         if len(self.deque) == 0:
+#             return True
+#         return False
