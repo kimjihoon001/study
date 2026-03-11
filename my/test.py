@@ -329,40 +329,40 @@
 
 # print(postfix_calc("5 3 4 + -"))
 
-class Queue:
-    def __init__(self):
-        self.queue = []
+# class Queue:
+#     def __init__(self):
+#         self.queue = []
 
-    def enqueue(self,name):
-        self.queue.append(name)
+#     def enqueue(self,name):
+#         self.queue.append(name)
         
-    def is_empty(self):
-        if len(self.queue) == 0:
-            return True
-        return False
+#     def is_empty(self):
+#         if len(self.queue) == 0:
+#             return True
+#         return False
     
-    def dequeue(self):
-        if not self.is_empty():
-            return self.queue.pop(0)
-        return -1
+#     def dequeue(self):
+#         if not self.is_empty():
+#             return self.queue.pop(0)
+#         return -1
     
-    def front(self):
-        if not self.is_empty():
-            return self.queue[0]
-        return -1
+#     def front(self):
+#         if not self.is_empty():
+#             return self.queue[0]
+#         return -1
     
-    def status(self):
-        return self.queue
+#     def status(self):
+#         return self.queue
     
         
-bank = Queue()
+# bank = Queue()
 
-bank.enqueue("김철수")
-bank.enqueue("이영희")
-bank.enqueue("박민수")
-print(f"현재대기열: {bank.status()}")
-print(f"업무처리중인고객: {bank.dequeue()}")
-print(f"남은대기고객: {bank.status()}")
+# bank.enqueue("김철수")
+# bank.enqueue("이영희")
+# bank.enqueue("박민수")
+# print(f"현재대기열: {bank.status()}")
+# print(f"업무처리중인고객: {bank.dequeue()}")
+# print(f"남은대기고객: {bank.status()}")
 
 
 
@@ -385,3 +385,94 @@ print(f"남은대기고객: {bank.status()}")
 #         if len(self.deque) == 0:
 #             return True
 #         return False
+# map1 = [
+#     [0,1,1,1,1,1],
+#     [0,1,0,0,0,1],
+#     [0,1,0,1,0,1],
+#     [0,1,0,1,0,0],
+#     [0,0,0,1,1,0],
+#     [1,1,1,1,1,0]
+#     ]
+
+# for map in map1:
+#     print(map)
+    
+# rows, cols = map(int, input('행과 열을 입력하세요 ex)6 6:').split())
+
+# map2 = []
+
+# for _ in range(rows):
+#     row = list(map(int, input('길 = 0, 벽 = 1을 입력하세요 ex)0 0 0 1 1:').split()))
+#     map2.append(row)
+    
+# sx, sy = map(int, input("시작 좌표 입력 ex)0 0: ").split())
+
+# if not (0 <= sx < rows and 0 <= sy < cols):
+#     print("시작 좌표가 맵 밖입니다.")
+#     exit()
+
+# if map2[sx][sy] == 1:
+#     print("시작 위치가 벽입니다.")
+#     exit()
+
+# def my_dfs(maps,start):
+#     stack = []
+#     visited = []
+    
+#     stack.append(start)
+    
+#     while stack:
+#         r, c = stack.pop()
+        
+#         if (r,c) in visited:
+#             continue
+#         visited.append((r,c))
+#         for dr, dc in [(-1, 0),(1, 0),(0, -1),(0, 1)]:
+#              nr, nc = r + dr, c + dc
+#              if 0 <= nr < len(maps) and 0 <= nc <len(maps[0]):
+#                 if (nr, nc) not in visited and maps[nr][nc] == 0:
+#                     stack.append((nr,nc)) 
+#     return visited
+
+# print(my_dfs(map2, (sx, sy)))        
+
+
+rows, cols = map(int, input('행과 열을 입력하세요 ex)6 6:').split())
+
+map2 = []
+
+for _ in range(rows):
+    row = list(map(int, input('길 = 0, 벽 = 1을 입력하세요 ex)0 0 0 1 1:').split()))
+    map2.append(row)
+    
+sx, sy = map(int, input("시작 좌표 입력 ex)0 0: ").split())
+
+if not (0 <= sx < rows and 0 <= sy < cols):
+    print("시작 좌표가 맵 밖입니다.")
+    exit()
+
+if map2[sx][sy] == 1:
+    print("시작 위치가 벽입니다.")
+    exit()
+
+def my_bfs(maps,start):
+    queue = []
+    visited = []
+    
+    queue.append(start)
+    
+    while queue:
+        r, c = queue.pop(0)
+        
+        if (r,c) in visited:
+            continue
+        visited.append((r,c))
+        for dr, dc in [(-1, 0),(1, 0),(0, -1),(0, 1)]:
+             nr, nc = r + dr, c + dc
+             if 0 <= nr < len(maps) and 0 <= nc <len(maps[0]):
+                if (nr, nc) not in visited and maps[nr][nc] == 0:
+                    queue.append((nr,nc)) 
+    return visited
+
+print(my_bfs(map2, (sx, sy)))        
+                        
