@@ -437,42 +437,85 @@
 # print(my_dfs(map2, (sx, sy)))        
 
 
-rows, cols = map(int, input('행과 열을 입력하세요 ex)6 6:').split())
+# rows, cols = map(int, input('행과 열을 입력하세요 ex)6 6:').split())
 
-map2 = []
+# map2 = []
 
-for _ in range(rows):
-    row = list(map(int, input('길 = 0, 벽 = 1을 입력하세요 ex)0 0 0 1 1:').split()))
-    map2.append(row)
+# for _ in range(rows):
+#     row = list(map(int, input('길 = 0, 벽 = 1을 입력하세요 ex)0 0 0 1 1:').split()))
+#     map2.append(row)
     
-sx, sy = map(int, input("시작 좌표 입력 ex)0 0: ").split())
+# sx, sy = map(int, input("시작 좌표 입력 ex)0 0: ").split())
 
-if not (0 <= sx < rows and 0 <= sy < cols):
-    print("시작 좌표가 맵 밖입니다.")
-    exit()
+# if not (0 <= sx < rows and 0 <= sy < cols):
+#     print("시작 좌표가 맵 밖입니다.")
+#     exit()
 
-if map2[sx][sy] == 1:
-    print("시작 위치가 벽입니다.")
-    exit()
+# if map2[sx][sy] == 1:
+#     print("시작 위치가 벽입니다.")
+#     exit()
 
-def my_bfs(maps,start):
-    queue = []
-    visited = []
+# def my_bfs(maps,start):
+#     queue = []
+#     visited = []
     
-    queue.append(start)
+#     queue.append(start)
     
-    while queue:
-        r, c = queue.pop(0)
+#     while queue:
+#         r, c = queue.pop(0)
         
-        if (r,c) in visited:
-            continue
-        visited.append((r,c))
-        for dr, dc in [(-1, 0),(1, 0),(0, -1),(0, 1)]:
-             nr, nc = r + dr, c + dc
-             if 0 <= nr < len(maps) and 0 <= nc <len(maps[0]):
-                if (nr, nc) not in visited and maps[nr][nc] == 0:
-                    queue.append((nr,nc)) 
-    return visited
+#         if (r,c) in visited:
+#             continue
+#         visited.append((r,c))
+#         for dr, dc in [(-1, 0),(1, 0),(0, -1),(0, 1)]:
+#              nr, nc = r + dr, c + dc
+#              if 0 <= nr < len(maps) and 0 <= nc <len(maps[0]):
+#                 if (nr, nc) not in visited and maps[nr][nc] == 0:
+#                     queue.append((nr,nc)) 
+#     return visited
 
-print(my_bfs(map2, (sx, sy)))        
+# print(my_bfs(map2, (sx, sy)))        
                         
+import pandas as pd
+
+path = r'my\data.csv'
+df = pd.read_csv(path)
+print(f"Age 평균: {df['Age'].mean()}, 최댓값: {df['Age'].max()}, 최솟값: {df['Age'].min()}")
+print(f"Salary 평균: {df['Salary'].mean()}, 최댓값: {df['Salary'].max()}, 최솟값: {df['Salary'].min()}")
+
+# import pandas as pd
+
+# path = r'my\data.csv'
+# df = pd.read_csv(path)
+# print(df)
+# filtered = df[(df['Age'] >= 30) & (df['Salary'] >= 6000)]
+# print(filtered)
+
+# import numpy as np
+
+# arr = np.array([1,2,3,4,5,6,7,8,9,10])
+# arr_2 = arr ** 2
+# print(f'원본배열: {arr}')
+# print(f'제곱배열: {arr_2}')
+# print(f'평균: {arr_2.mean()}, 최댓값: {arr_2.max()}, 최솟값: {arr_2.min()}')
+# import numpy as np
+
+# arr = np.random.randint(1,20,(3,4))
+
+# print('원본행렬')
+# print(arr)
+# print(f'각행의최댓값: {arr.max(axis=1)}')
+
+
+# import matplotlib.pyplot as plt
+
+# plt.rcParams['font.family'] = 'Malgun gothic'
+
+# x = [1, 2, 3, 4, 5]
+# y = [2, 4, 6, 8, 10]
+# plt.plot(x,y)
+# plt.title('Line Graph')
+# plt.xlabel('X 축')
+# plt.ylabel('Y 축')
+# plt.grid(True)
+# plt.show()
