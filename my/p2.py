@@ -4,7 +4,7 @@ url = "https://api.openweathermap.org/data/2.5/weather"
 
 params = {
     "q": "Seoul",
-    "appid": "c28a93a56f31c3644f4b184706d25ba6",
+    "appid": "",
     "units": "metric"
 }
 
