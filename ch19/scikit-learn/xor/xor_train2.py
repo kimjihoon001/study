@@ -39,3 +39,4 @@ print(pre)
 ac_score = metrics.accuracy_score(label, pre)
 
 print(f'정답률ㅣ {ac_score}')
+

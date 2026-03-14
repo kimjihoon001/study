@@ -476,12 +476,12 @@
 
 # print(my_bfs(map2, (sx, sy)))        
                         
-import pandas as pd
+# import pandas as pd
 
-path = r'my\data.csv'
-df = pd.read_csv(path)
-print(f"Age 평균: {df['Age'].mean()}, 최댓값: {df['Age'].max()}, 최솟값: {df['Age'].min()}")
-print(f"Salary 평균: {df['Salary'].mean()}, 최댓값: {df['Salary'].max()}, 최솟값: {df['Salary'].min()}")
+# path = r'my\data.csv'
+# df = pd.read_csv(path)
+# print(f"Age 평균: {df['Age'].mean()}, 최댓값: {df['Age'].max()}, 최솟값: {df['Age'].min()}")
+# print(f"Salary 평균: {df['Salary'].mean()}, 최댓값: {df['Salary'].max()}, 최솟값: {df['Salary'].min()}")
 
 # import pandas as pd
 
@@ -519,3 +519,4 @@ print(f"Salary 평균: {df['Salary'].mean()}, 최댓값: {df['Salary'].max()}, �
 # plt.ylabel('Y 축')
 # plt.grid(True)
 # plt.show()
+
